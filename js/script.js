@@ -1,5 +1,20 @@
-// Copyright (c) 2020 Mr. Coxall All rights reserved
+// Copyright (c) 2024 Mr. Coxall All rights reserved
 //
-// Created by: Mr. Coxall
-// Created on: Sep 2020
+// Created by: Tymofii
+// Created on: May 2024
 // This file contains the JS functions for index.html
+
+"use strict"
+
+let cookieCount = 0
+
+if (localStorage.getItem('cookieCount')) {
+  cookieCount = parseInt(localStorage.getItem('cookieCount'))
+  document.getElementById('cookieCount').innerText = 'Cookies: ' + cookieCount
+}
+
+function clickCookie() {
+  cookieCount++
+  document.getElementById('cookieCount').innerText = 'Cookies: ' + cookieCount
+  localStorage.setItem('cookieCount', cookieCount)
+}
